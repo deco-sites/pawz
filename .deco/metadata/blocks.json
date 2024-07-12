@@ -147,5 +147,6 @@
   "/.deco/blocks/Vanilla.json": {
     "blockType": "sections",
     "__resolveType": "site/sections/Theme/Theme.tsx"
-  }
+  },
+  "/.deco/blocks/deco-records.json": null
 }
