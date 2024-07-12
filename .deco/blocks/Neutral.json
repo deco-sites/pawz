@@ -27,6 +27,22 @@
   },
   "font": {
     "__resolveType": "website/loaders/fonts/googleFonts.ts",
-    "fonts": [{ "variations": [], "family": "Albert Sans" }]
-  }
+    "fonts": [
+      {
+        "variations": [
+          {
+            "weight": "400"
+          },
+          {
+            "weight": "500"
+          },
+          {
+            "weight": "700"
+          }
+        ],
+        "family": "Roboto"
+      }
+    ]
+  },
+  "mode": "light"
 }
