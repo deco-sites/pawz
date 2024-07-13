@@ -42,17 +42,17 @@ export default function MainPost({
   },
 }: Props) {
   return (
-    <div class="container lg:mx-auto lg:py-14 mx-2 py-12 text-sm">
+    <div class="relative container lg:mx-auto mx-2 text-sm before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full hover:before:w-[calc(100%_+_32px)] hover:before:h-[calc(100%_+_32px)] before:border before:border-base-300 before:rounded-lg hover:before:-top-4 hover:before:-left-4 before:opacity-0 hover:before:opacity-100 before:transition-all before:duration-300 before:z-0">
       <div class="space-y-16">
         <a
           href={`/blog/${post?.slug}`}
-          class="border border-secondary gap-8 grid grid-cols-1 items-center md:grid-cols-2 overflow-hidden rounded-lg"
+          class="gap-8 grid grid-cols-1 items-center md:grid-cols-2 overflow-hidden"
         >
           {post?.image && (
             <Image
               width={656}
               height={500}
-              class="object-fit w-full z-10"
+              class="object-fit w-full z-10 rounded-lg "
               sizes="(max-width: 656px) 100vw, 30vw"
               src={post?.image || ""}
               alt={post?.image}
@@ -61,19 +61,19 @@ export default function MainPost({
             />
           )}
           <div class="p-6 space-y-4">
-            <div class="space-y-2">
-              <h3 class="text-2xl">{post?.title}</h3>
-              <p class="text-base">{post?.excerpt}</p>
+            <div class="flex flex-col gap-4">
+              <h3 class="heading-3">{post?.title}</h3>
+              <p class="paragraph text-base-400">{post?.excerpt}</p>
             </div>
             <div class="flex flex-wrap gap-2">
               {post?.categories?.map((category) => (
-                <div class="badge badge-lg badge-primary text-xs">
+                <div class="flex items-center h-6 px-2 bg-base-200 text-xs tracking-widest rounded uppercase">
                   {category.name}
                 </div>
               ))}
             </div>
-            <div class="flex flex-wrap gap-2">
-              <span>
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="text-[10px] tracking-[3px] text-base-400">
                 {post?.date
                   ? new Date(post?.date).toLocaleDateString("en-US", {
                     month: "long",
@@ -83,7 +83,7 @@ export default function MainPost({
                   : ""}
               </span>
               <span>•</span>
-              <span>{post?.authors[0]?.name}</span>
+              <span class="text-xs font-semibold">{post?.authors[0]?.name}</span>
             </div>
           </div>
         </a>
