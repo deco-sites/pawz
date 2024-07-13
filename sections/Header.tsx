@@ -1,17 +1,17 @@
 import { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-import { FnContext } from "deco/mod.ts";
 import Icon from "site/components/ui/Icon.tsx";
 
+/**
+ * @title {{{title}}}
+ */
 interface MenuProps {
   title: string;
   url: string;
 }
 
 interface Props {
-  device?: FnContext["device"];
   logo?: ImageWidget;
-  url?: string;
   alt?: string;
   menu?: MenuProps[];
 }
@@ -76,16 +76,16 @@ const SearchInput = () => (
   </form>
 );
 
-export default function Header({ device, logo, url, alt, menu }: Props) {
+export default function Header({ logo, alt, menu }: Props) {
   return (
-    <header class="container mx-auto mt-7 lg:mt-8 lg:mb-5 relative">
+    <header class="container mx-auto mt-7 lg:mt-8 lg:mb-5 relative fade-in">
       {logo && (
-        <a href={url} target="_blank" class="flex items-center justify-center">
+        <a href="/" class="flex items-center justify-center">
           <Image src={logo} alt={alt} width={110} height={66} />
         </a>
       )}
 
-      {device === "mobile" && <DrawerButton />}
+      <DrawerButton />
 
       {menu && (
         <nav class="hidden lg:flex peer-checked:flex flex-col items-center justify-evenly lg:pt-7 lg:pb-8 pt-4">
@@ -104,13 +104,4 @@ export default function Header({ device, logo, url, alt, menu }: Props) {
       )}
     </header>
   );
-}
-
-export const loader = (props: Props, _req: Request, ctx: FnContext) => {
-  const device = ctx.device;
-
-  return {
-    ...props,
-    device: device || "desktop",
-  }
 }
