@@ -139,7 +139,10 @@
     "blockType": "sections",
     "__resolveType": "site/sections/ImageWithParagraph.tsx"
   },
-  "/.deco/blocks/Preview%20%2Fsections%2FHeader.tsx.json": null,
+  "/.deco/blocks/Preview%20%2Fsections%2FHeader.tsx.json": {
+    "blockType": "sections",
+    "__resolveType": "site/sections/Header.tsx"
+  },
   "/.deco/blocks/Preview%20site%2Fsections%2FHero.tsx.json": {
     "blockType": "sections",
     "__resolveType": "site/sections/Hero.tsx"
