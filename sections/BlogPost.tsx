@@ -1,5 +1,8 @@
 import { type BlogPost, BlogPostPage } from "apps/blog/types.ts";
 import Image from "apps/website/components/Image.tsx";
+import { CommentaryList } from "site/components/ui/CommentaryList.tsx";
+import { UserCommentary } from "site/sdk/types.ts";
+import { CommentaryForm } from "site/components/ui/CommentaryForm.tsx";
 
 interface Props {
   /**
@@ -7,6 +10,21 @@ interface Props {
    */
   page?: BlogPostPage | null;
 }
+
+const commentaries: UserCommentary[] = [
+  {
+    userName: "Breno Oliveira",
+    createdAt: "08/11/2023 at 08:39",
+    commentary: "Que história incrível. 🥹 Parabéns Veridiana e Snow. Conte mais histórias, Zee.",
+    profileImage: "",
+  },
+  {
+    userName: "Breno Oliveira",
+    createdAt: "08/11/2023 at 08:39",
+    commentary: "Que história incrível. 🥹 Parabéns Veridiana e Snow. Conte mais histórias, Zee.",
+    profileImage: "",
+  },
+]
 
 const PARAGRAPH_STYLES = "[&_p]:leading-[150%] [&_*]:mb-4";
 const HEADING_STYLES =
@@ -194,6 +212,8 @@ export default function BlogPost({ page }: Props) {
           </div>
         </div>
       </div>
+      <CommentaryList commentaries={commentaries} />
+      <CommentaryForm />
     </div>
   );
 }

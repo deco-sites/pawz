@@ -15,15 +15,15 @@
     "--tab-radius": "0.5rem"
   },
   "mainColors": {
-    "base-100": "#ffffff",
-    "primary": "#171717",
-    "secondary": "#c7c7c7",
-    "tertiary": "#404040",
-    "neutral": "#333333",
-    "success": "#008060",
-    "warning": "#ffc453",
-    "error": "#d82c0d",
-    "info": "#2e72d2"
+    "base-100": "#f4f4f4",
+    "primary": "#ffffff",
+    "secondary": "#121212",
+    "tertiary": "#000000",
+    "neutral": "#000000",
+    "success": "#25D366",
+    "warning": "#E28759",
+    "error": "#FC4F63",
+    "info": "#009AFF"
   },
   "font": {
     "__resolveType": "website/loaders/fonts/googleFonts.ts",
@@ -44,5 +44,11 @@
       }
     ]
   },
-  "mode": "light"
+  "mode": "light",
+  "complementaryColors": {
+    "base-200": "#E2E2E2",
+    "base-300": "#C7C7C7",
+    "base-400": "#666666",
+    "base-500": "#353535"
+  }
 }

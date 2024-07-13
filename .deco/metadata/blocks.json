@@ -148,5 +148,9 @@
     "blockType": "sections",
     "__resolveType": "site/sections/Theme/Theme.tsx"
   },
-  "/.deco/blocks/deco-records.json": null
+  "/.deco/blocks/deco-records.json": null,
+  "/.deco/blocks/Preview%20blog%2Floaders%2FBlogpost.ts.json": {
+    "blockType": "loaders",
+    "__resolveType": "blog/loaders/Blogpost.ts"
+  }
 }
