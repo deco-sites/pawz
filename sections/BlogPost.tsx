@@ -5,9 +5,7 @@ import { UserCommentary } from "site/sdk/types.ts";
 import { CommentaryForm } from "site/components/ui/CommentaryForm.tsx";
 import { AppContext } from "../apps/site.ts";
 import type { AppContext as RecordsApp } from "site/apps/deco/records.ts";
-import { blogsComments, comments, newsletter } from "site/db/schema.ts";
-import { eq } from "drizzle-orm";
-import { FnContext } from "deco/mod.ts";
+import { blogsComments } from "site/db/schema.ts";
 
 interface Props {
   /**
@@ -150,8 +148,8 @@ export const loader = async (
 
   const recs = await drizzle
     .select()
-    .from(blogsComments)
-    // .where(eq(blogsComments.id, Number(props.page?.post.name)));
+    .from(blogsComments);
+  // .where(eq(blogsComments.id, Number(props.page?.post.name)));
 
   return { ...props, commentaries: recs };
 };
@@ -242,7 +240,7 @@ export default function BlogPost({ page, commentaries }: Props) {
         </div>
       </div>
       <CommentaryList commentaries={commentaries} />
-      <CommentaryForm />
+      <CommentaryForm id={name} />
     </div>
   );
 }

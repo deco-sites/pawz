@@ -104,7 +104,9 @@ export default function Newsletter(props: Props) {
           type="submit"
           class="w-full lg:w-1/2 my-1 bg-secondary lg:hover:bg-transparent lg:hover:text-gray-50 text-white transition-all"
         >
-          <span class="[.htmx-request_&]:hidden inline font-light">QUERO SABER MAIS!</span>
+          <span class="[.htmx-request_&]:hidden inline font-light">
+            QUERO SABER MAIS!
+          </span>
           <span class="[.htmx-request_&]:inline hidden loading loading-spinner" />
         </button>
       </form>

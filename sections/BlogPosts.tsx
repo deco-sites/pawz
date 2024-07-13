@@ -1,5 +1,4 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
-import Image from "apps/website/components/Image.tsx";
 import { useSection } from "deco/hooks/useSection.ts";
 import { ComponentChildren, Fragment } from "preact";
 import { BlogPost } from "apps/blog/types.ts";
@@ -72,9 +71,7 @@ export default function BlogPosts({
     <ContainerComponent>
       <>
         <div class="gap-8 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
-          {posts?.slice(from, to).map((post) => (
-            <PostCard post={post} />
-          ))}
+          {posts?.slice(from, to).map((post) => <PostCard post={post} />)}
         </div>
         {posts && to < posts.length && (
           <div class="flex justify-center w-full" id={postList}>

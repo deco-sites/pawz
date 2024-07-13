@@ -13,9 +13,12 @@ export const Commentary = ({ author, date, body }: CommentaryProps) => {
           <span class="paragraph font-semibold text-base-400">{author}</span>
           <span class="text-xs tracking-widest text-base-300">{date}</span>
         </div>
-        <p class="paragraph text-base-400 max-w-80" dangerouslySetInnerHTML={{ __html: body }}>
+        <p
+          class="paragraph text-base-400 max-w-80"
+          dangerouslySetInnerHTML={{ __html: body }}
+        >
         </p>
       </div>
     </div>
-  )
-}
+  );
+};
