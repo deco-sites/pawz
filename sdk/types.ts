@@ -1,6 +1,10 @@
 export interface UserCommentary {
-  userName: string;
-  createdAt: string;
-  commentary: string;
-  profileImage?: string;
+  id: number;
+  approved: number;
+  post_id: number;
+  parent_comment_id: number;
+  author: string;
+  author_email: string;
+  date: string;
+  body: string;
 }

@@ -21,10 +21,10 @@ export const comments = sqliteTable("comments", {
 export const blogsComments = sqliteTable("blogsComments", {
   id: integer("id").primaryKey({ autoIncrement: true }),
   approved: integer("approved").default(0),
-  post_id: integer("post_id"),
+  post_id: text("post_id"),
   parent_comment_id: integer("parent_comment_id"),
   author: text("author"),
   author_email: text("author_email"),
-  date: text("date"),
+  date: text("date").default("CURRENT_TIMESTAMP"),
   body: text("body"),
 });
