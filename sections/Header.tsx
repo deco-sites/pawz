@@ -59,26 +59,31 @@ const SearchIcon = () => (
       <Icon
         id="MagnifyingGlass"
         size={14}
-        class="text-gray-50 hover:text-primary"
+        class="text-gray-50 hover:text-primary cursor-pointer"
       />
     </label>
   </>
 );
 
 const SearchInput = () => (
-  <form action="/s" class="hidden peer-checked/search:flex">
+  <form id="searchbar-form" action="/s" class="hidden peer-checked/search:flex">
     <input
+      autoFocus
       id="search-blog"
       type="text"
       class="border border-gray-50 rounded text-gray-50 text-sm p-3"
       placeholder="Busque aqui"
+      name="q"
+      hx-trigger="input changed delay:300ms, q"
+      hx-indicator="#searchbar-form"
+      hx-swap="innerHTML"
     />
   </form>
 );
 
 export default function Header({ logo, alt, menu }: Props) {
   return (
-    <header class="container mx-auto mt-7 lg:mt-8 lg:mb-5 relative fade-in">
+    <header class="container mx-auto mt-7 lg:mt-8 lg:mb-5 relative">
       {logo && (
         <a href="/" class="flex items-center justify-center">
           <Image src={logo} alt={alt} width={110} height={66} />
@@ -95,7 +100,7 @@ export default function Header({ logo, alt, menu }: Props) {
               {menu.map((item, index) => <MenuItem key={index} {...item} />)}
             </ul>
 
-            <div class="flex flex-col items-center justify-center gap-4">
+            <div class="flex flex-col lg:flex-row items-center justify-center gap-4">
               <SearchIcon />
               <SearchInput />
             </div>

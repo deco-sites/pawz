@@ -4,6 +4,7 @@ import type { AppContext as ResendApp } from "apps/resend/mod.ts";
 import { useComponent } from "site/sections/Component.tsx";
 import { newsletter } from "site/db/schema.ts";
 import { eq } from "drizzle-orm";
+import Icon from "site/components/ui/Icon.tsx";
 
 interface Props {
   submissionResponse: { error?: string; email: string };
@@ -79,7 +80,7 @@ export default function Newsletter(props: Props) {
         Se você curtiu esse post, inscreva-se e saiba muito mais.
       </h2>
 
-      <p class="text-base text-primary text-center">
+      <p class="text-base text-primary text-center font-light">
         Promoções, dicas de nutrição, lugares, comportamento e mais, direto na
         sua caixa de e-mail.
       </p>
@@ -97,13 +98,13 @@ export default function Newsletter(props: Props) {
           name="email"
           required
           placeholder="SEU E-MAIL"
-          class="text-sm w-full lg:w-1/2 border-none pl-3 h-10 lg:h-full outline-none"
+          class="text-sm w-full lg:w-1/2 border-none pl-3 h-10 lg:h-full outline-none font-light"
         />
         <button
           type="submit"
-          class="w-full lg:w-1/2 p-1 bg-secondary lg:hover:bg-transparent lg:hover:text-gray-50 text-white transition-all"
+          class="w-full lg:w-1/2 my-1 bg-secondary lg:hover:bg-transparent lg:hover:text-gray-50 text-white transition-all"
         >
-          <span class="[.htmx-request_&]:hidden inline">QUERO SABER MAIS!</span>
+          <span class="[.htmx-request_&]:hidden inline font-light">QUERO SABER MAIS!</span>
           <span class="[.htmx-request_&]:inline hidden loading loading-spinner" />
         </button>
       </form>
@@ -129,19 +130,7 @@ export default function Newsletter(props: Props) {
         )}
         {submissionResponse && !submissionResponse.error && (
           <div role="alert" class="alert alert-success">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="stroke-current shrink-0 h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
+            <Icon id="Alert" size={24} />
             <span>
               Pronto! <br /> Você{" "}
               <b class="font-bold">receberá um e-mail para confirmação</b>.
