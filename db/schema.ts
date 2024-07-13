@@ -7,6 +7,17 @@ export const newsletter = sqliteTable("newsletter", {
   confirmation_key: text("confirmation_key"),
 });
 
+export const comments = sqliteTable("comments", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  approved: integer("approved").default(0),
+  post_id: integer("post_id"),
+  parent_comment_id: integer("parent_comment_id"),
+  author: text("author"),
+  author_email: text("author_email"),
+  date: text("date"),
+  body: text("body"),
+});
+
 export const blogsComments = sqliteTable("blogsComments", {
   id: integer("id").primaryKey({ autoIncrement: true }),
   approved: integer("approved").default(0),

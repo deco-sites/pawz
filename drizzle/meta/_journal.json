@@ -22,6 +22,13 @@
       "when": 1720890401872,
       "tag": "0002_redundant_mongoose",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1720893462554,
+      "tag": "0003_hesitant_mother_askani",
+      "breakpoints": true
     }
   ]
 }
