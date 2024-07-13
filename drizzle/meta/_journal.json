@@ -15,6 +15,13 @@
       "when": 1720889775331,
       "tag": "0001_careless_la_nuit",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1720890401872,
+      "tag": "0002_redundant_mongoose",
+      "breakpoints": true
     }
   ]
 }
