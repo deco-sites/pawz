@@ -30,6 +30,7 @@ const DEFAULT_IMAGE =
 
 export default function MainPost({
   post = {
+    name: "123abc",
     slug: "/",
     title: "Title of blogpost #1",
     authors: [{ name: "Name of the author", email: "author@deco.cx" }],

@@ -24,6 +24,9 @@
 
 @layer components {
 
+  body {
+    background-color: linear-gradient(180deg, #000 0%, #F0F0F0 100%);
+  }
   /** Prevent scroll when modal is open */
   .no-scroll {
     overflow: hidden;
@@ -39,6 +42,52 @@
 }
 
 @layer utilities {
+
+  .heading-2 {
+    @apply text-3xl font-bold;
+    letter-spacing: 1.68px;
+  }
+
+  .heading-3 {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 500;
+    letter-spacing: 1.68px;
+  }
+
+  .paragraph {
+    @apply text-sm tracking-widest;
+  }
+
+  .button-defaults {
+    @apply flex items-center justify-center px-10 font-bold text-sm tracking-[0.105em] rounded-full transition-all disabled:pointer-events-none;
+  }
+  
+  .button-100 {
+    @apply button-defaults bg-secondary disabled:bg-base-300 text-white;
+    &:hover {
+      background: #666;
+    }
+  }
+  .button-200 {
+    @apply button-defaults border border-secondary bg-secondary bg-opacity-10 hover:bg-opacity-100 disabled:text-base-300 disabled:border-base-300 text-secondary;
+    &:hover {
+      background: #121212;
+      color: #fff;
+    }
+  }
+  
+  /* .button-2 {
+    @apply button-defaults bg-secondary bg-opacity-10 hover:bg-opacity-100 border border-secondary bg-secondary disabled:border-base-300 text-secondary disabled:text-base-300 hover:text-white
+  }
+  
+  .button-3 {
+    @apply button-defaults bg-transparent hover:bg-secondary hover:bg-opacity-10 border border-secondary disabled:border-base-300 text-secondary disabled:text-base order-base-300
+  }
+  
+  .button-4 {
+    @apply button-defaults bg-blue hover:bg-base-400 disabled:bg-base-300 text-white
+  } */
 
   /** Remove scrollbar from overflow-auto */
   .scrollbar-none {

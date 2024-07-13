@@ -23,6 +23,9 @@
       }
     },
     {
+      "__resolveType": "site/sections/Newsletter.tsx"
+    },
+    {
       "__resolveType": "site/sections/Footer.tsx"
     }
   ],
