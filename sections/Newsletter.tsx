@@ -76,11 +76,11 @@ export default function Newsletter(props: Props) {
 
   return (
     <div class="container mx-auto flex items-center justify-center flex-col gap-4 px-4 lg:px-0">
-      <h2 class="font-bold text-3xl text-primary uppercase -tracking-[0.03em] text-center">
+      <h2 class="font-bold text-3xl text-secondary uppercase -tracking-[0.03em] text-center">
         Se você curtiu esse post, inscreva-se e saiba muito mais.
       </h2>
 
-      <p class="text-base text-primary text-center font-light">
+      <p class="text-base text-secondary text-center font-light">
         Promoções, dicas de nutrição, lugares, comportamento e mais, direto na
         sua caixa de e-mail.
       </p>

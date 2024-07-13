@@ -40,6 +40,10 @@ export interface ComplementaryColors {
   /** @format color-input */
   "base-300"?: string;
   /** @format color-input */
+  "base-400"?: string;
+  /** @format color-input */
+  "base-500"?: string;
+  /** @format color-input */
   "base-content"?: string;
   /** @format color-input */
   "primary-content"?: string;
@@ -179,6 +183,7 @@ const toVariables = (
     "--b1": t["base-100"],
     "--b2": t["base-200"] ?? darken(t["base-100"], 0.07),
     "--b3": t["base-300"] ?? darken(t["base-100"], 0.14),
+    "--b4": t["base-400"] ?? darken(t["base-100"], 0.21),
     "--bc": t["base-content"] ?? contrasted(t["base-100"]),
 
     "--su": t["success"],

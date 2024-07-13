@@ -4,6 +4,7 @@ import { useSection } from "deco/hooks/useSection.ts";
 import { ComponentChildren, Fragment } from "preact";
 import { BlogPost } from "apps/blog/types.ts";
 import { useId } from "../sdk/useId.ts";
+import { PostCard } from "site/components/ui/PostCard.tsx";
 
 export interface CTA {
   text?: string;
@@ -65,14 +66,6 @@ export default function BlogPosts({
     },
   });
 
-  function calculateReadingTime(words: number): string {
-    const wordsPerMinute = 250;
-    const estimatedTimeMinutes = words / wordsPerMinute;
-
-    const roundedReadingTime = Math.round(estimatedTimeMinutes);
-    return `${roundedReadingTime} min`;
-  }
-
   const ContainerComponent = page === 0 ? Container : Fragment;
 
   return (
@@ -80,50 +73,7 @@ export default function BlogPosts({
       <>
         <div class="gap-8 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
           {posts?.slice(from, to).map((post) => (
-            <a
-              href={`/blog/${post.slug}`}
-              class="border border-secondary overflow-hidden rounded-lg"
-            >
-              <Image
-                width={380}
-                height={274}
-                class="object-fit w-full"
-                sizes="(max-width: 640px) 100vw, 30vw"
-                src={post.image || ""}
-                alt={post.image}
-                decoding="async"
-                loading="lazy"
-              />
-              <div class="p-6 space-y-4">
-                <div class="font-semibold">
-                  {calculateReadingTime(post.content.split(" ").length)}
-                </div>
-                <div class="space-y-2">
-                  <h3 class="text-2xl">{post.title}</h3>
-                  <p class="text-base">{post.excerpt}</p>
-                </div>
-                <div class="flex flex-wrap gap-2">
-                  {post.categories?.map((category) => (
-                    <div class="badge badge-lg badge-primary text-xs">
-                      {category.name}
-                    </div>
-                  ))}
-                </div>
-                <div class="flex flex-wrap gap-2">
-                  <span>
-                    {post.date
-                      ? new Date(post.date).toLocaleDateString("en-US", {
-                        month: "long",
-                        day: "numeric",
-                        year: "numeric",
-                      })
-                      : ""}
-                  </span>
-                  <span>•</span>
-                  <span>{post.authors[0]?.name}</span>
-                </div>
-              </div>
-            </a>
+            <PostCard post={post} />
           ))}
         </div>
         {posts && to < posts.length && (
