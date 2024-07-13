@@ -1,4 +1,44 @@
 {
   "__resolveType": "site/sections/Header.tsx",
-  "navigation": { "links": [], "buttons": [] }
+  "navigation": {
+    "links": [],
+    "buttons": []
+  },
+  "logo": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11578/eb4c31f3-5d2c-4d15-abe5-912705c18c00",
+  "url": "https://www.zeedog.com.br/",
+  "alt": "Zee.Dog Blog",
+  "menu": [
+    {
+      "title": "Cachorros",
+      "url": "/cachorros"
+    },
+    {
+      "title": "Gatos",
+      "url": "/gatos"
+    },
+    {
+      "title": "Alimentação",
+      "url": "/alimentacao"
+    },
+    {
+      "title": "Cuidados",
+      "url": "/cuidados"
+    },
+    {
+      "title": "A Zee.Dog",
+      "url": "/a-zee-dog"
+    },
+    {
+      "title": "Social",
+      "url": "/social"
+    },
+    {
+      "title": "Zee.Now",
+      "url": "https://www.zeenow.com.br/"
+    },
+    {
+      "title": "Loja",
+      "url": "/loja"
+    }
+  ]
 }
