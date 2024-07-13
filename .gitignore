@@ -79,4 +79,6 @@ _docker_deps.ts
 .metadata/changeset.json
 sqlite.db
 
-.env
+# dotenv environment variable files
+.env*
+!.env.example
