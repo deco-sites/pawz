@@ -1,0 +1,13 @@
+{
+  "__resolveType": "site/apps/deco/resend.ts",
+  "apiWrite": {},
+  "emailTo": [],
+  "apiKey": {
+    "__resolveType": "website/loaders/secret.ts",
+    "name": "RESEND_KEY",
+    "encrypted": "4d524074cdeb599f162887a162fb1e13b65c7d22de9a644213dd5a1f7e261ecc2b8caba0e6560fdf93395acf62532173"
+  },
+  "emailFrom": {
+    "name": "Pawz Blog"
+  }
+}

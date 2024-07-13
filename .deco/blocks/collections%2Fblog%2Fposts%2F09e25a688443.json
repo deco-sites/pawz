@@ -1,0 +1,27 @@
+{
+  "name": "collections/blog/posts/09e25a688443",
+  "__resolveType": "blog/loaders/Blogpost.ts",
+  "post": {
+    "authors": [
+      {
+        "name": "Name of the Author",
+        "email": "author@deco.cx",
+        "jobTitle": "Author",
+        "company": "deco.cx",
+        "avatar": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/7286de42-e9c5-4fcb-ae8b-b992eea4b78e"
+      }
+    ],
+    "categories": [
+      {
+        "name": "Customization",
+        "slug": "customization"
+      }
+    ],
+    "title": "Novo post",
+    "excerpt": "testando blog post",
+    "date": "2024-07-12",
+    "slug": "testando-blog-post",
+    "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel risus lacinia, sodales nulla tincidunt, interdum enim. Aliquam aliquam justo ut tortor tempus, mollis semper magna rutrum. Aliquam tempor molestie efficitur. Mauris vitae feugiat diam. Fusce tempus enim at turpis sagittis, vel rhoncus urna viverra. In posuere lacus quis ornare mollis. Nullam elementum neque eu augue lacinia imperdiet. Proin vitae commodo ex, vitae consequat tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed pulvinar facilisis sapien vitae ultrices. Aliquam erat volutpat. Suspendisse potenti. Duis mattis sem augue, non finibus lorem porttitor in. Nunc pharetra nec arcu eget blandit.</p><p style=\"text-align: justify\">Quisque sit amet odio tellus. Nunc ut laoreet ex. Ut a enim non nisl fermentum maximus. Aenean mollis id libero sit amet mattis. Sed vel risus odio. In vestibulum, velit rutrum elementum scelerisque, purus odio imperdiet lectus, in varius risus leo ac libero. Mauris molestie leo sit amet est consectetur pharetra.</p><p style=\"text-align: justify\">Quisque vehicula metus lectus, ut commodo ipsum tincidunt nec. Donec bibendum nibh et erat ultrices scelerisque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras non felis ac elit mattis aliquet. Cras vitae lacus in justo vulputate pulvinar. Sed vulputate finibus cursus. Duis et pharetra lectus, sit amet euismod sapien. Quisque condimentum cursus tortor vel commodo. Aenean hendrerit leo nec augue rhoncus, ut rhoncus nulla finibus. Praesent id metus non neque interdum imperdiet. Duis eget justo sagittis, aliquam lacus eu, mollis mauris. Nulla molestie metus at purus dignissim vestibulum. Integer sodales gravida enim, nec tempus purus.</p><p style=\"text-align: justify\">Mauris lacinia augue efficitur, tincidunt eros vel, vestibulum sem. Vestibulum ut venenatis justo. Fusce leo odio, commodo non facilisis in, porta nec leo. Aliquam sit amet leo at libero aliquet egestas. Aliquam felis lacus, luctus eu sollicitudin et, ullamcorper vel erat. Donec sit amet nunc libero. Nam quis diam mattis, gravida nunc eget, aliquam mi. Praesent porta velit efficitur est bibendum mollis. Fusce et quam luctus, pharetra elit non, hendrerit dui.</p><p style=\"text-align: justify\">Praesent laoreet mollis tellus, quis convallis tortor laoreet in. Aenean suscipit nec velit vel cursus. Proin egestas condimentum gravida. Etiam ac vulputate lacus. Pellentesque ornare lacinia justo eu pellentesque. Donec hendrerit diam turpis, ut sollicitudin purus bibendum ut. Proin lectus felis, ultrices non sagittis nec, laoreet at mi. Mauris euismod massa pulvinar augue suscipit viverra. Curabitur malesuada pretium malesuada. Curabitur vel augue a odio faucibus fringilla. Duis eget tellus vel libero egestas molestie. Sed in massa in mauris gravida consequat. Phasellus rutrum odio in pellentesque dignissim. Etiam id vehicula mauris. Suspendisse porta justo at est maximus tristique.</p>",
+    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11578/7e04c176-05ce-4529-869b-9786331e69b6"
+  }
+}
