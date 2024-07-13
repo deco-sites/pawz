@@ -15,16 +15,18 @@ const commentaries: UserCommentary[] = [
   {
     userName: "Breno Oliveira",
     createdAt: "08/11/2023 at 08:39",
-    commentary: "Que história incrível. 🥹 Parabéns Veridiana e Snow. Conte mais histórias, Zee.",
+    commentary:
+      "Que história incrível. 🥹 Parabéns Veridiana e Snow. Conte mais histórias, Zee.",
     profileImage: "",
   },
   {
     userName: "Breno Oliveira",
     createdAt: "08/11/2023 at 08:39",
-    commentary: "Que história incrível. 🥹 Parabéns Veridiana e Snow. Conte mais histórias, Zee.",
+    commentary:
+      "Que história incrível. 🥹 Parabéns Veridiana e Snow. Conte mais histórias, Zee.",
     profileImage: "",
   },
-]
+];
 
 const PARAGRAPH_STYLES = "[&_p]:leading-[150%] [&_*]:mb-4";
 const HEADING_STYLES =
@@ -42,6 +44,7 @@ const DEFAULT_AVATAR =
   "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/7286de42-e9c5-4fcb-ae8b-b992eea4b78e";
 
 const DEFAULT_PROPS: BlogPost = {
+  name: "ab123cd4",
   title: "Blog title heading will go here",
   excerpt: "Excerpt goes here",
   authors: [
@@ -132,7 +135,8 @@ function SocialIcons() {
 }
 
 export default function BlogPost({ page }: Props) {
-  const { title, authors, image, date, content } = page?.post || DEFAULT_PROPS;
+  const { title, authors, image, date, content, name } = page?.post ||
+    DEFAULT_PROPS;
 
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
     year: "numeric",
@@ -160,6 +164,7 @@ export default function BlogPost({ page }: Props) {
           </div>
         </div>
       </div>
+      <span class="font-semibold">post_id: {name}</span>
       <Image
         className="w-full object-cover aspect-video max-h-[600px] rounded-2xl"
         width={600}
