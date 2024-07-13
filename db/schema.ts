@@ -8,7 +8,7 @@ export const newsletter = sqliteTable("newsletter", {
 });
 
 export const comments = sqliteTable("comments", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+    id: integer("id").primaryKey({ autoIncrement: true }),
   approved: integer("approved").default(0),
   post_id: integer("post_id"),
   parent_comment_id: integer("parent_comment_id"),
