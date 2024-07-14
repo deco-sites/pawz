@@ -1,3 +1,6 @@
 {
-  "__resolveType": "site/sections/Footer.tsx"
+  "__resolveType": "site/sections/Footer.tsx",
+  "logo": {
+    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11578/eb4c31f3-5d2c-4d15-abe5-912705c18c00"
+  }
 }

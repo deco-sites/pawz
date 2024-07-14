@@ -4,6 +4,7 @@ import { ComponentChildren, Fragment } from "preact";
 import { BlogPost } from "apps/blog/types.ts";
 import { useId } from "../sdk/useId.ts";
 import { PostCard } from "site/components/ui/PostCard.tsx";
+import MainPost from "site/components/MainPostComponent.tsx";
 
 export interface CTA {
   text?: string;
@@ -37,8 +38,8 @@ export interface Props {
 
 function Container({ children }: { children: ComponentChildren }) {
   return (
-    <div class="container lg:mx-auto lg:py-14 mx-2 py-12 text-sm">
-      <div class="space-y-8">{children}</div>
+    <div class="container lg:mx-auto lg:py-14 py-12 text-sm">
+      <div class="space-y-8 px-6 lg:px-8">{children}</div>
     </div>
   );
 }
@@ -51,7 +52,7 @@ export default function BlogPosts({
     perPage = 6,
   } = {},
 }: Props) {
-  const from = perPage * page;
+  // const from = perPage * page;
   const to = perPage * (page + 1);
 
   // It's boring to generate ids. Let's autogen them
@@ -71,7 +72,8 @@ export default function BlogPosts({
     <ContainerComponent>
       <>
         <div class="gap-8 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
-          {posts?.slice(from, to).map((post) => <PostCard post={post} />)}
+          <MainPost post={posts?.[0]} class="lg:col-span-2" inGrid={true} />
+          {posts?.slice(1).map((post) => <PostCard post={post} />)}
         </div>
         {posts && to < posts.length && (
           <div class="flex justify-center w-full" id={postList}>

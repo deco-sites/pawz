@@ -8,6 +8,15 @@
   html {
     font-family: var(--font-family);
   }
+  body {
+    padding-top: 114px;
+  }
+  @media screen and (min-width: 1024px) {
+    body {
+      padding-top: 258px;
+    }
+  }
+
 
   /** Remove default styles from input[type=number] */
   input[type=number]::-webkit-inner-spin-button,
@@ -24,9 +33,6 @@
 
 @layer components {
 
-  body {
-    background-color: linear-gradient(180deg, #000 0%, #F0F0F0 100%);
-  }
   /** Prevent scroll when modal is open */
   .no-scroll {
     overflow: hidden;
@@ -99,13 +105,86 @@
     display: none;
   }
 
-  .fade-in {
-    animation: fade-in linear;
-    animation-timeline: view(100px);
+  @keyframes adjust-nav {
+    0%, 49.9% {
+      justify-content: center;
+    }
+    50%, 100% {
+      justify-content: start;
+    }
   }
 
-  @keyframes fade-in {
-    from { scale: 0 }
-    to { scale: 1 }
+  @keyframes adjust-links {
+    0%, 49.9% {
+      align-items: center;
+    }
+    50%, 100% {
+      align-items: start;
+    }
+  }
+  @keyframes adjust-direction {
+    0%, 49.9% {
+      flex-direction: row;
+    }
+    50%, 100% {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  @keyframes make-aside {
+    0%, 49.9% {
+      width: 100vw;
+      background: #f4f4f4;
+      top: 0;
+      left: auto;
+      border-color: #e2e2e2;
+    }
+    50%, 100% {
+      width: 272px;
+      background: #ffffff33;
+      top: 200px;
+      left: 24px;
+      border-radius: 12px;
+      backdrop-filter: blur(12px);
+      border: 1px solid #e2e2e2;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .adjust-nav {
+      animation: adjust-nav linear forwards;
+      animation-timeline: scroll();
+      animation-range: cover 0% cover 534px;
+    }
+    .adjust-links {
+      animation: adjust-links linear forwards;
+      animation-timeline: scroll();
+      animation-range: cover 0% cover 534px;
+    }
+    .adjust-direction {
+      animation: adjust-direction linear forwards;
+      animation-timeline: scroll();
+      animation-range: cover 0% cover 534px;
+    }
+    .make-aside {
+      animation: make-aside linear forwards;
+      animation-timeline: scroll();
+      animation-range: cover 0% cover 534px;
+    }
+  }
+
+  #my-drawer:checked + label span:nth-of-type(1) {
+    position: absolute;
+    rotate: 45deg;
+    transform-origin: center;
+  }
+  #my-drawer:checked + label span:nth-of-type(2) {
+    opacity: 0;
+  }
+  #my-drawer:checked + label span:nth-of-type(3) {
+    position: absolute;
+    rotate: -45deg;
+    transform-origin: center;
   }
 }
