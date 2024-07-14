@@ -1,6 +1,5 @@
 import { BlogPost } from "apps/blog/types.ts";
 import Image from "apps/website/components/Image.tsx";
-import { Commentary } from "site/components/ui/Commentary.tsx";
 
 export interface postCardProps {
   post: BlogPost;
@@ -16,7 +15,6 @@ function calculateReadingTime(words: number): string {
 
 export const PostCard = ({ post }: postCardProps) => {
   return (
-
     <a
       href={`/blog/${post.slug}`}
       class="group relative flex flex-col gap-y-4 before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:border before:border-base-300 before:rounded-lg hover:before:scale-105 before:opacity-0 hover:before:opacity-100 before:transition-all before:duration-300 before:z-0"
@@ -32,7 +30,9 @@ export const PostCard = ({ post }: postCardProps) => {
           decoding="async"
           loading="lazy"
         />
-        <div class="absolute bottom-0 flex items-center justify-center h-10 px-3 text-xs tracking-widest text-primary bg-secondary bg-opacity-60 backdrop-blur-lg rounded-md drop-shadow-md opacity-0 invisible group-hover:bottom-6 group-hover:opacity-100 group-hover:visible transition-all duration-300 hover:bg-opacity-100">LEIA MAIS</div>
+        <div class="absolute bottom-0 flex items-center justify-center h-10 px-3 text-xs tracking-widest text-primary bg-secondary bg-opacity-60 backdrop-blur-lg rounded-md drop-shadow-md opacity-0 invisible group-hover:bottom-6 group-hover:opacity-100 group-hover:visible transition-all duration-300 hover:bg-opacity-100">
+          LEIA MAIS
+        </div>
       </div>
       <div class="flex items-center gap-x-3">
         <span class="text-[10px] tracking-[3px] text-base-400">
@@ -49,9 +49,9 @@ export const PostCard = ({ post }: postCardProps) => {
         </span>
         <div class="flex gap-x-2">
           {post.categories?.map((category) => (
-          <div class="flex items-center h-6 px-2 bg-base-200 text-xs tracking-widest rounded uppercase">
-            {category.name}
-          </div>
+            <div class="flex items-center h-6 px-2 bg-base-200 text-xs tracking-widest rounded uppercase">
+              {category.name}
+            </div>
           ))}
         </div>
       </div>
@@ -60,5 +60,5 @@ export const PostCard = ({ post }: postCardProps) => {
         <p class="paragraph text-base-400">{post.excerpt}</p>
       </div>
     </a>
-  )
-}
+  );
+};

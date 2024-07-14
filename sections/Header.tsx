@@ -57,10 +57,12 @@ const DrawerButton = () => (
 //   </form>
 // );
 
-
 export default function Header({ logo, alt, menu }: Props) {
   return (
-    <header id="header" class="header fixed top-0 flex flex-col items-center gap-y-6 w-full p-6 lg:p-8 make-aside z-20 bg-base-100 bg-opacity-30 backdrop-blur-md lg:backdrop-blur-0 lg:bg-opacity-100 border-base-200 border-b lg:border-b-0">
+    <header
+      id="header"
+      class="header fixed top-0 flex flex-col items-center gap-y-6 w-full p-6 lg:p-8 make-aside z-20 bg-base-100 bg-opacity-30 backdrop-blur-md lg:backdrop-blur-0 lg:bg-opacity-100 border-base-200 border-b lg:border-b-0"
+    >
       <DrawerButton />
       {logo && (
         <a href="/" class="flex items-center justify-center w-16 lg:w-auto">
@@ -75,7 +77,10 @@ export default function Header({ logo, alt, menu }: Props) {
             <ul class="flex adjust-direction items-center justify-center flex-wrap">
               {menu.map((item, index) => <MenuItem key={index} {...item} />)}
             </ul>
-            <form action="/s" class="flex items-center gap-2 w-full lg:max-w-40 h-12 border-b border-base-300 hover:border-secondary">
+            <form
+              action="/s"
+              class="flex items-center gap-2 w-full lg:max-w-40 h-12 border-b border-base-300 hover:border-secondary"
+            >
               <label>
                 <Icon
                   id="MagnifyingGlass"
@@ -87,7 +92,8 @@ export default function Header({ logo, alt, menu }: Props) {
                 id="search-blog"
                 type="text"
                 class="w-full h-full bg-transparent rounded text-base-400 text-sm px-3 paragraph"
-                placeholder="Busque aqui" />
+                placeholder="Busque aqui"
+              />
             </form>
           </div>
         </nav>

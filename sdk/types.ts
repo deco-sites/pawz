@@ -1,15 +1,10 @@
-import { ImageWidget } from "apps/admin/widgets.ts";
-
 export interface UserCommentary {
-  userName: string;
-  createdAt: string;
-  commentary: string;
-  profileImage?: string;
-}
-
-export interface CTA {
-  id?: string;
-  href?: string;
-  text?: string;
-  outline?: boolean;
+  id: number;
+  approved: number;
+  post_id: number;
+  parent_comment_id: number;
+  author: string;
+  author_email: string;
+  date: string;
+  body: string;
 }
