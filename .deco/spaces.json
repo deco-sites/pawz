@@ -23,7 +23,9 @@
           "render": "function",
           "viewId": "Home",
           "id": "dashboard::Home:undefined:homeHome{}",
-          "state": { "__signal": null }
+          "state": {
+            "__signal": null
+          }
         }
       },
       "category": "Highlights"
@@ -51,7 +53,9 @@
           "render": "function",
           "viewId": "List",
           "id": "pages::List:undefined:listList{}",
-          "state": { "__signal": null }
+          "state": {
+            "__signal": null
+          }
         }
       },
       "category": "Content"
@@ -79,7 +83,9 @@
           "render": "function",
           "viewId": "List",
           "id": "sections::List:undefined:listList{}",
-          "state": { "__signal": null }
+          "state": {
+            "__signal": null
+          }
         }
       },
       "category": "Content"
@@ -115,7 +121,9 @@
             "spaceId": "{\"path\":[\"seo\"],\"filepath\":\"/.deco/blocks/site.json\"}"
           },
           "id": "site-seo::Partial Form:undefined:pencilPartial Form{\"spaceId\":\"{\\\"path\\\":[\\\"seo\\\"],\\\"filepath\\\":\\\"/.deco/blocks/site.json\\\"}\"}",
-          "state": { "__signal": null }
+          "state": {
+            "__signal": null
+          }
         },
         "site-seo::Preview:undefined:worldPreview{\"spaceId\":\"/.deco/blocks/site.json\"}": {
           "name": "Preview",
@@ -123,9 +131,13 @@
           "accepts": "function",
           "render": "function",
           "viewId": "Preview",
-          "viewProps": { "spaceId": "/.deco/blocks/site.json" },
+          "viewProps": {
+            "spaceId": "/.deco/blocks/site.json"
+          },
           "id": "site-seo::Preview:undefined:worldPreview{\"spaceId\":\"/.deco/blocks/site.json\"}",
-          "state": { "__signal": null }
+          "state": {
+            "__signal": null
+          }
         }
       },
       "category": "Advanced"
@@ -165,7 +177,9 @@
           "render": "function",
           "viewId": "Theme Selector",
           "id": "themes::Theme Selector:undefined:paletteTheme Selector{}",
-          "state": { "__signal": null }
+          "state": {
+            "__signal": null
+          }
         },
         "themes::Theme Viewer:undefined:paletteTheme Viewer{}": {
           "name": "Theme Viewer",
@@ -174,7 +188,9 @@
           "render": "function",
           "viewId": "Theme Viewer",
           "id": "themes::Theme Viewer:undefined:paletteTheme Viewer{}",
-          "state": { "__signal": null }
+          "state": {
+            "__signal": null
+          }
         },
         "themes::Theme Preview:undefined:paletteTheme Preview{}": {
           "name": "Theme Preview",
@@ -183,7 +199,9 @@
           "render": "function",
           "viewId": "Theme Preview",
           "id": "themes::Theme Preview:undefined:paletteTheme Preview{}",
-          "state": { "__signal": null }
+          "state": {
+            "__signal": null
+          }
         }
       },
       "category": "Advanced"
@@ -218,7 +236,9 @@
           "render": "function",
           "viewId": "List",
           "id": "loaders::List:undefined:listList{}",
-          "state": { "__signal": null }
+          "state": {
+            "__signal": null
+          }
         }
       },
       "category": "Advanced"
@@ -244,7 +264,9 @@
           "render": "function",
           "viewId": "List",
           "id": "actions::List:undefined:listList{}",
-          "state": { "__signal": null }
+          "state": {
+            "__signal": null
+          }
         }
       },
       "category": "Advanced"
@@ -270,7 +292,9 @@
           "render": "function",
           "viewId": "segments",
           "id": "segments::segments:undefined:experimentsegments{}",
-          "state": { "__signal": null }
+          "state": {
+            "__signal": null
+          }
         }
       },
       "category": "Advanced"
@@ -296,7 +320,9 @@
           "render": "function",
           "viewId": "Apps",
           "id": "apps::Apps:undefined:appsApps{}",
-          "state": { "__signal": null }
+          "state": {
+            "__signal": null
+          }
         }
       },
       "category": "Advanced"
@@ -322,11 +348,18 @@
           "render": "function",
           "viewId": "analytics",
           "id": "analytics::analytics:undefined:layout-gridanalytics{}",
-          "state": { "__signal": null }
+          "state": {
+            "__signal": null
+          }
         }
       },
       "category": "Management",
-      "tags": [{ "label": "PRO", "color": "positive" }]
+      "tags": [
+        {
+          "label": "PRO",
+          "color": "positive"
+        }
+      ]
     },
     {
       "id": "logs",
@@ -349,10 +382,17 @@
           "render": "function",
           "viewId": "logs",
           "id": "logs::logs:undefined:newslogs{}",
-          "state": { "__signal": null }
+          "state": {
+            "__signal": null
+          }
         }
       },
-      "tags": [{ "label": "PRO", "color": "positive" }],
+      "tags": [
+        {
+          "label": "PRO",
+          "color": "positive"
+        }
+      ],
       "category": "Management"
     },
     {
@@ -383,7 +423,9 @@
           "render": "function",
           "viewId": "settings",
           "id": "settings::settings:undefined:adjustments-horizontalsettings{}",
-          "state": { "__signal": null }
+          "state": {
+            "__signal": null
+          }
         },
         "settings::domains:undefined:adjustments-horizontaldomains{}": {
           "name": "domains",
@@ -391,7 +433,9 @@
           "render": "function",
           "viewId": "domains",
           "id": "settings::domains:undefined:adjustments-horizontaldomains{}",
-          "state": { "__signal": null }
+          "state": {
+            "__signal": null
+          }
         }
       },
       "category": "Management"
@@ -428,7 +472,9 @@
           "render": "function",
           "viewId": "Blog",
           "id": "collections::Blog:undefined:articleBlog{}",
-          "state": { "__signal": null }
+          "state": {
+            "__signal": null
+          }
         },
         "collections::Blog Items:undefined:articleBlog Items{}": {
           "name": "Blog Items",
@@ -436,7 +482,9 @@
           "render": "function",
           "viewId": "Blog Items",
           "id": "collections::Blog Items:undefined:articleBlog Items{}",
-          "state": { "__signal": null }
+          "state": {
+            "__signal": null
+          }
         }
       },
       "category": "Content"
@@ -462,7 +510,9 @@
           "render": "function",
           "viewId": "releases",
           "id": "releases::releases:undefined:rocketreleases{}",
-          "state": { "__signal": null }
+          "state": {
+            "__signal": null
+          }
         }
       },
       "category": "Content"
@@ -500,7 +550,10 @@
           "render": "function",
           "viewId": "Properties",
           "id": "/.deco/blocks/pages-home-5afd25174424.json::Properties:undefined:listProperties{}",
-          "state": { "__signal": null, "value": null }
+          "state": {
+            "__signal": null,
+            "value": null
+          }
         },
         "/.deco/blocks/pages-home-5afd25174424.json::Preview:undefined:worldPreview{}": {
           "name": "Preview",
@@ -509,7 +562,9 @@
           "render": "function",
           "viewId": "Preview",
           "id": "/.deco/blocks/pages-home-5afd25174424.json::Preview:undefined:worldPreview{}",
-          "state": { "__signal": null }
+          "state": {
+            "__signal": null
+          }
         }
       }
     },
@@ -536,7 +591,9 @@
           "render": "function",
           "viewId": "Environment",
           "id": "Staging::Environment:undefined:rocketEnvironment{}",
-          "state": { "__signal": null }
+          "state": {
+            "__signal": null
+          }
         }
       }
     }

@@ -105,6 +105,15 @@
     display: none;
   }
 
+  @keyframes adjust-item {
+    0%, 49.9% {
+      width: auto;
+    }
+    50%, 100% {
+      width: 100%;
+      text-align: center;
+    }
+  }
   @keyframes adjust-nav {
     0%, 49.9% {
       justify-content: center;
@@ -152,6 +161,12 @@
   }
 
   @media screen and (min-width: 1024px) {
+    .adjust-item {
+      animation: adjust-item linear forwards;
+      animation-timeline: scroll();
+      animation-range: cover 0% cover 534px;
+    }
+
     .adjust-nav {
       animation: adjust-nav linear forwards;
       animation-timeline: scroll();
@@ -167,6 +182,7 @@
       animation-timeline: scroll();
       animation-range: cover 0% cover 534px;
     }
+    
     .make-aside {
       animation: make-aside linear forwards;
       animation-timeline: scroll();
