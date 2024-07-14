@@ -90,7 +90,8 @@ export const loader = async (
           eq(comments.post_id, props.page!.post.name),
           eq(comments.approved, 1),
         ),
-      );
+      )
+      .orderBy(comments.date);
 
     return { ...props, commentaries: recs };
   } catch (e) {
@@ -104,6 +105,7 @@ export default function BlogPostComment(props: Props) {
   const { name } = props.page?.post || { name: "" };
   const { commentaries, submissionResponse } = props;
   const postId = name;
+
   return (
     <>
       <div class="flex flex-col gap-6 w-full max-w-3xl mx-auto divide-y divide-x-base-200">
@@ -111,7 +113,9 @@ export default function BlogPostComment(props: Props) {
           Comentários <span>({commentaries?.length || 0})</span>:
         </h3>
         {commentaries?.map((commentary) => {
-          const { author, date, body } = commentary;
+          const { author, body } = commentary;
+          const date = commentary.date.toLocaleString();
+
           return (
             <div class="flex w-full py-6 gap-x-6">
               <div class="rounded-lg overflow-hidden w-11 h-11 bg-base-200">
