@@ -11,20 +11,20 @@ interface Props {
   page?: BlogPostPage | null;
 }
 
-const commentaries: UserCommentary[] = [
-  {
-    userName: "Breno Oliveira",
-    createdAt: "08/11/2023 at 08:39",
-    commentary: "Que história incrível. 🥹 Parabéns Veridiana e Snow. Conte mais histórias, Zee.",
-    profileImage: "",
-  },
-  {
-    userName: "Breno Oliveira",
-    createdAt: "08/11/2023 at 08:39",
-    commentary: "Que história incrível. 🥹 Parabéns Veridiana e Snow. Conte mais histórias, Zee.",
-    profileImage: "",
-  },
-]
+// const commentaries: UserCommentary[] = [
+//   {
+//     userName: "Breno Oliveira",
+//     createdAt: "08/11/2023 at 08:39",
+//     commentary: "Que história incrível. 🥹 Parabéns Veridiana e Snow. Conte mais histórias, Zee.",
+//     profileImage: "",
+//   },
+//   {
+//     userName: "Breno Oliveira",
+//     createdAt: "08/11/2023 at 08:39",
+//     commentary: "Que história incrível. 🥹 Parabéns Veridiana e Snow. Conte mais histórias, Zee.",
+//     profileImage: "",
+//   },
+// ]
 
 const PARAGRAPH_STYLES = "[&_p]:leading-[150%] [&_*]:mb-4";
 const HEADING_STYLES =
@@ -212,7 +212,7 @@ export default function BlogPost({ page }: Props) {
           </div>
         </div>
       </div>
-      <CommentaryList commentaries={commentaries} />
+      <CommentaryList commentaries={[]} />
       <CommentaryForm />
     </div>
   );

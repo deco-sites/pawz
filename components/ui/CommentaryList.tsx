@@ -10,7 +10,7 @@ export const CommentaryList = ({ commentaries }: CommentaryListProps) => {
     <div class="flex flex-col gap-6 w-full max-w-3xl mx-auto divide-y divide-x-base-200">
       <h3 class="heading-2 py-3">Comentários <span>({commentaries.length})</span>:</h3>
       {commentaries.length === 0 
-        ? <h3>Seja o primeiro a comentar!</h3>
+        ? <p class="paragraph text-base-400 py-4">Seja o primeiro a comentar!</p>
         : commentaries.map((commentary) => (
             <Commentary {...commentary} />
           ))
