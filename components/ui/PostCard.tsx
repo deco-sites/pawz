@@ -1,16 +1,9 @@
 import { BlogPost } from "apps/blog/types.ts";
 import Image from "apps/website/components/Image.tsx";
+import { calculateReadingTime } from "site/sdk/calculateReadingTime.ts";
 
 export interface postCardProps {
   post: BlogPost;
-}
-
-function calculateReadingTime(words: number): string {
-  const wordsPerMinute = 250;
-  const estimatedTimeMinutes = words / wordsPerMinute;
-
-  const roundedReadingTime = Math.round(estimatedTimeMinutes);
-  return `${roundedReadingTime} min`;
 }
 
 export const PostCard = ({ post }: postCardProps) => {
