@@ -8,7 +8,7 @@ import { type BlogPostPage } from "apps/blog/types.ts";
 import { comments } from "site/db/schema.ts";
 import type { UserCommentary } from "site/sdk/types.ts";
 
-import { eq } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 
 interface commentarySubmissionResponse {
   error: boolean;
@@ -85,7 +85,12 @@ export const loader = async (
     const recs = await drizzle
       .select()
       .from(comments)
-      .where(eq(comments.post_id, props.page!.post.name));
+      .where(
+        and(
+          eq(comments.post_id, props.page!.post.name),
+          eq(comments.approved, 1),
+        ),
+      );
 
     return { ...props, commentaries: recs };
   } catch (e) {
@@ -130,23 +135,24 @@ export default function BlogPostComment(props: Props) {
           );
         })}
       </div>
-      <section class="flex flex-col gap-6 w-full max-w-3xl mx-auto pb-12 lg:pb-28">
-        <div id="commentary-form-result">
-          {submissionResponse && !submissionResponse.error && (
-            <div class="flex flex-col">
-              <p class="paragraph text-white p-4 rounded-lg bg-green-400">
-                Comentário enviado com sucesso e aguardando moderação.
-              </p>
-            </div>
-          )}
-          {submissionResponse?.error && (
-            <div class="flex flex-col">
-              <p class="paragraph text-white p-4 rounded-lg bg-red-400">
-                Seu comentário não foi enviado. Por favor, tente novamente.
-              </p>
-            </div>
-          )}
-        </div>
+      <section
+        id="commentary-form"
+        class="flex flex-col gap-6 w-full max-w-3xl mx-auto pb-12 lg:pb-28"
+      >
+        {submissionResponse && !submissionResponse.error && (
+          <div class="flex flex-col">
+            <p class="paragraph text-white p-4 rounded-lg bg-green-400">
+              Comentário enviado com sucesso e aguardando moderação.
+            </p>
+          </div>
+        )}
+        {submissionResponse?.error && (
+          <div class="flex flex-col">
+            <p class="paragraph text-white p-4 rounded-lg bg-red-400">
+              Seu comentário não foi enviado. Por favor, tente novamente.
+            </p>
+          </div>
+        )}
         <div class="flex flex-col">
           <h3 class="heading-2 py-3">Deixe um comentário</h3>
           <p class="paragraph text-base-300">
@@ -159,7 +165,7 @@ export default function BlogPostComment(props: Props) {
         </div>
         <form
           class="flex flex-col gap-6"
-          hx-target="#commentary-form-result"
+          hx-target="#commentary-form"
           hx-swap="outerHTML"
           hx-post={useSection()}
         >
