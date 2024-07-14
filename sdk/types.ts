@@ -1,3 +1,5 @@
+import { ImageWidget } from "apps/admin/widgets.ts";
+
 export interface UserCommentary {
   id: number;
   approved: number;
