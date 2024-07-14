@@ -37,11 +37,11 @@ const DrawerButton = () => (
     />
     <label
       for="my-drawer"
-      class="lg:hidden flex flex-col gap-1 w-7 h-7 rounded bg-gray-100 drawer-button p-1.5 absolute right-4 top-0"
+      class="lg:hidden flex flex-col items-center justify-center gap-1 w-7 h-7 rounded bg-primary drawer-button p-1.5 absolute top-8 right-6"
     >
-      <span class="w-full h-0.5 bg-gray-600 rounded-sm" />
-      <span class="w-full h-0.5 bg-gray-600 rounded-sm" />
-      <span class="w-full h-0.5 bg-gray-600 rounded-sm" />
+      <span class="w-4 h-0.5 bg-secondary rounded-sm transition-all" />
+      <span class="w-4 h-0.5 bg-secondary rounded-sm" />
+      <span class="w-4 h-0.5 bg-secondary rounded-sm transition-all" />
     </label>
   </>
 );
@@ -60,19 +60,19 @@ const DrawerButton = () => (
 
 export default function Header({ logo, alt, menu }: Props) {
   return (
-    <header id="header" class="header fixed top-0 flex flex-col gap-y-6 w-full p-6 lg:p-8 make-aside z-20 bg-base-100 border-base-200">
+    <header id="header" class="header fixed top-0 flex flex-col items-center gap-y-6 w-full p-6 lg:p-8 make-aside z-20 bg-base-100 bg-opacity-30 backdrop-blur-md lg:backdrop-blur-0 lg:bg-opacity-100 border-base-200 border-b lg:border-b-0">
       <DrawerButton />
       {logo && (
-        <a href="/" class="flex items-center justify-center">
+        <a href="/" class="flex items-center justify-center w-16 lg:w-auto">
           <Image src={logo} alt={alt} width={110} height={66} />
         </a>
       )}
 
       {menu && (
-        <nav class="hidden lg:flex peer-checked:flex flex-col items-center justify-evenly">
+        <nav class="h-0 flex peer-checked:h-52 flex-col items-center justify-evenly overflow-hidden transition-all">
           <hr class="lg:hidden w-full border-gray-300 pb-2" />
           <div class="flex flex-col adjust-links gap-4 ">
-            <ul class="flex adjust-direction items-center flex-wrap">
+            <ul class="flex adjust-direction items-center justify-center flex-wrap">
               {menu.map((item, index) => <MenuItem key={index} {...item} />)}
             </ul>
             <form action="/s" class="flex items-center gap-2 w-full lg:max-w-40 h-12 border-b border-base-300 hover:border-secondary">
