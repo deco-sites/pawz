@@ -1,5 +1,6 @@
 import Image from "apps/website/components/Image.tsx";
 import { BlogPost } from "apps/blog/types.ts";
+import { calculateReadingTime } from "site/sdk/calculateReadingTime.ts";
 
 export interface Props {
   post?: BlogPost | null;
@@ -27,13 +28,11 @@ export default function MainPostComponent({
   inGrid,
 }: Props) {
   return (
-    <div
+    <a
       class={`group relative container lg:mx-auto text-sm before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full hover:before:w-[calc(100%_+_32px)] hover:before:h-[calc(100%_+_32px)] before:border before:border-base-300 before:rounded-lg hover:before:-top-4 hover:before:-left-4 before:opacity-0 hover:before:opacity-100 before:transition-all before:duration-300 before:z-0 ${_class}`}
+      href={`/blog/${post?.slug}`}
     >
-      <a
-        href={`/blog/${post?.slug}`}
-        class="gap-8 grid grid-cols-1 items-center md:grid-cols-2 h-full overflow-hidden"
-      >
+      <div class="gap-8 grid grid-cols-1 items-center md:grid-cols-2 h-full overflow-hidden">
         <div class="relative flex justify-center w-full h-full">
           {post?.image && (
             <Image
@@ -56,6 +55,11 @@ export default function MainPostComponent({
             <h3 class="heading-3">{post?.title}</h3>
             <p class="paragraph text-base-400">{post?.excerpt}</p>
           </div>
+          {post?.content && (
+            <span class="flex items-center h-6 px-2 rounded bg-base-300 text-xs font-semibold text-white tracking-widest w-max">
+              {calculateReadingTime(post.content.split(" ").length)}
+            </span>
+          )}
           <div class="flex flex-wrap gap-2">
             {post?.categories?.map((category) => (
               <div class="flex items-center h-6 px-2 bg-base-200 text-xs tracking-widest rounded uppercase">
@@ -63,7 +67,7 @@ export default function MainPostComponent({
               </div>
             ))}
           </div>
-          <div class="flex flex-wrap gap-2 items-center">
+          <div class="flex flex-col flex-wrap gap-2">
             <span class="text-[10px] tracking-[3px] text-base-400">
               {post?.date
                 ? new Date(post?.date).toLocaleDateString("en-US", {
@@ -73,12 +77,12 @@ export default function MainPostComponent({
                 })
                 : ""}
             </span>
-            <span>•</span>
+            {/* <span>•</span> */}
             <span class="text-xs font-semibold">{post?.authors[0]?.name}</span>
           </div>
         </div>
-      </a>
+      </div>
       <hr class="lg:hidden border-base-200 mt-2.5" />
-    </div>
+    </a>
   );
 }
