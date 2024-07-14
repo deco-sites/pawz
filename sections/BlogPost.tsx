@@ -144,7 +144,7 @@ export default function BlogPost({ page }: Props) {
           </div>
         </div>
       </div>
-      <span class="font-semibold">post_id: {name}</span>
+      {/* <span class="font-semibold">post_id: {name}</span> */}
       <Image
         className="w-full object-cover aspect-video max-h-[600px] rounded-2xl"
         width={600}
