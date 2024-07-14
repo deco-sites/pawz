@@ -33,10 +33,11 @@
     "dev": "deno run -A --env --unstable --unstable-hmr dev.ts",
     "db:setup:deps": "deno cache -r --node-modules-dir npm:drizzle-orm@0.30.10 npm:drizzle-kit@0.21.2 npm:@libsql/client@0.6.0/node",
     "db:check:credentials": "deno eval --env 'import{getDbCredentials}from\"apps/records/scripts/checkDbCredential.ts\";getDbCredentials();'",
-    "db:pull:prod": "deno eval --env 'import \"apps/records/scripts/pullProd.ts\"'",
-    "db:generate": "deno run -A --node-modules-dir npm:drizzle-kit@0.21.2 generate < /dev/null",
-    "db:migrate": "deno run -A --node-modules-dir --config=deno.json npm:drizzle-kit@0.21.2 migrate",
-    "db:schema:update": "DENO_FUTURE=1 deno task db:check:credentials && deno task db:generate && deno task db:migrate"
+    "db:pull:prod": "DENO_FUTURE=1 deno eval --env 'import \"apps/records/scripts/pullProd.ts\"'",
+    "db:generate": "DENO_FUTURE=1 deno run -A --node-modules-dir npm:drizzle-kit@0.21.2 generate < /dev/null",
+    "db:migrate": "DENO_FUTURE=1 deno run -A --node-modules-dir --config=deno.json npm:drizzle-kit@0.21.2 migrate",
+    "db:schema:update": "DENO_FUTURE=1 deno task db:check:credentials && deno task db:generate && deno task db:migrate",
+    "db:drop": "DENO_FUTURE=1 deno run -A --node-modules-dir npm:drizzle-kit@0.21.2 drop"
   },
   "githooks": {
     "pre-commit": "check"
