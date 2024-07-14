@@ -12,6 +12,7 @@ const DEFAULT_IMAGE =
 
 export default function MainPostComponent({
   post = {
+    name: "ab123cd4",
     slug: "/",
     title: "Title of blogpost #1",
     authors: [{ name: "Name of the author", email: "author@deco.cx" }],
@@ -26,7 +27,9 @@ export default function MainPostComponent({
   inGrid,
 }: Props) {
   return (
-    <div class={`group relative container lg:mx-auto text-sm before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full hover:before:w-[calc(100%_+_32px)] hover:before:h-[calc(100%_+_32px)] before:border before:border-base-300 before:rounded-lg hover:before:-top-4 hover:before:-left-4 before:opacity-0 hover:before:opacity-100 before:transition-all before:duration-300 before:z-0 ${_class}`}>
+    <div
+      class={`group relative container lg:mx-auto text-sm before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full hover:before:w-[calc(100%_+_32px)] hover:before:h-[calc(100%_+_32px)] before:border before:border-base-300 before:rounded-lg hover:before:-top-4 hover:before:-left-4 before:opacity-0 hover:before:opacity-100 before:transition-all before:duration-300 before:z-0 ${_class}`}
+    >
       <a
         href={`/blog/${post?.slug}`}
         class="gap-8 grid grid-cols-1 items-center md:grid-cols-2 h-full overflow-hidden"
@@ -44,7 +47,9 @@ export default function MainPostComponent({
               loading="lazy"
             />
           )}
-          <div class="absolute bottom-0 flex items-center justify-center h-10 px-3 text-xs tracking-widest text-primary bg-secondary bg-opacity-60 backdrop-blur-lg rounded-md drop-shadow-md opacity-0 invisible group-hover:bottom-6 group-hover:opacity-100 group-hover:visible transition-all duration-300 hover:bg-opacity-100 z-10">LEIA MAIS</div>
+          <div class="absolute bottom-0 flex items-center justify-center h-10 px-3 text-xs tracking-widest text-primary bg-secondary bg-opacity-60 backdrop-blur-lg rounded-md drop-shadow-md opacity-0 invisible group-hover:bottom-6 group-hover:opacity-100 group-hover:visible transition-all duration-300 hover:bg-opacity-100 z-10">
+            LEIA MAIS
+          </div>
         </div>
         <div class={`${inGrid ? "" : "p-6"} space-y-4`}>
           <div class="flex flex-col gap-4">

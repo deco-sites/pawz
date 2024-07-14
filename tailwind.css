@@ -131,7 +131,6 @@
       align-items: start;
     }
   }
-
   @keyframes adjust-direction {
     0%, 49.9% {
       flex-direction: row;
@@ -168,12 +167,16 @@
       animation-range: cover 0% cover 534px;
     }
 
+    .adjust-nav {
+      animation: adjust-nav linear forwards;
+      animation-timeline: scroll();
+      animation-range: cover 0% cover 534px;
+    }
     .adjust-links {
       animation: adjust-links linear forwards;
       animation-timeline: scroll();
       animation-range: cover 0% cover 534px;
     }
-
     .adjust-direction {
       animation: adjust-direction linear forwards;
       animation-timeline: scroll();

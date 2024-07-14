@@ -1,4 +1,3 @@
-import Image from "apps/website/components/Image.tsx";
 import { BlogPost } from "apps/blog/types.ts";
 import MainPostComponent from "site/components/MainPostComponent.tsx";
 
@@ -11,6 +10,7 @@ export interface MainPostProps {
 
 export default function MainPost({
   post = {
+    name: "123abc",
     slug: "/",
     title: "Title of blogpost #1",
     authors: [{ name: "Name of the author", email: "author@deco.cx" }],
@@ -22,7 +22,5 @@ export default function MainPost({
     content: "Blog Post Content",
   },
 }: MainPostProps) {
-  return (
-    <MainPostComponent post={post} />
-  );
+  return <MainPostComponent post={post} />;
 }

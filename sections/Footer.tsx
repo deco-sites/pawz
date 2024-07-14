@@ -17,8 +17,15 @@ export default function Footer({
 }: FooterProps) {
   return (
     <footer class="flex flex-col items-center justify-center gap-6 w-full py-8 border-t border-base-200">
-      <a href="/" class="px-3 py-2 rounded border border-secondary bg-secondary bg-opacity-10 hover:bg-opacity-100 hover:text-primary transition-all text-xs tracking-widest">Voltar ao topo</a>
-      <Image src={logo.src} alt={logo.alt} width={110} height={66} />
+      <a
+        href="/"
+        class="px-3 py-2 rounded border border-secondary bg-secondary bg-opacity-10 hover:bg-opacity-100 hover:text-primary transition-all text-xs tracking-widest"
+      >
+        Voltar ao topo
+      </a>
+      {logo && logo.src && (
+        <Image src={logo.src} alt={logo.alt} width={110} height={66} />
+      )}
     </footer>
   );
 }

@@ -1,5 +1,4 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
-import Image from "apps/website/components/Image.tsx";
 import { useSection } from "deco/hooks/useSection.ts";
 import { ComponentChildren, Fragment } from "preact";
 import { BlogPost } from "apps/blog/types.ts";
@@ -53,7 +52,7 @@ export default function BlogPosts({
     perPage = 6,
   } = {},
 }: Props) {
-  const from = perPage * page;
+  // const from = perPage * page;
   const to = perPage * (page + 1);
 
   // It's boring to generate ids. Let's autogen them
@@ -73,10 +72,8 @@ export default function BlogPosts({
     <ContainerComponent>
       <>
         <div class="gap-8 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
-          <MainPost post={posts?.[0]} class="lg:col-span-2" inGrid={true}/>
-          {posts?.slice(1).map((post) => (
-            <PostCard post={post} />
-          ))}
+          <MainPost post={posts?.[0]} class="lg:col-span-2" inGrid={true} />
+          {posts?.slice(1).map((post) => <PostCard post={post} />)}
         </div>
         {posts && to < posts.length && (
           <div class="flex justify-center w-full" id={postList}>
