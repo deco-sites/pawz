@@ -1,37 +1,20 @@
-import { type BlogPost, BlogPostPage } from "apps/blog/types.ts";
-import Image from "apps/website/components/Image.tsx";
-import { CommentaryList } from "site/components/ui/CommentaryList.tsx";
-import { UserCommentary } from "site/sdk/types.ts";
-import { CommentaryForm } from "site/components/ui/CommentaryForm.tsx";
-import { AppContext } from "../apps/site.ts";
+import { AppContext } from "site/apps/site.ts";
 import type { AppContext as RecordsApp } from "site/apps/deco/records.ts";
-import { blogsComments } from "site/db/schema.ts";
+import { type BlogPost, BlogPostPage } from "apps/blog/types.ts";
+import { eq } from "drizzle-orm";
+import Image from "apps/website/components/Image.tsx";
+import { comments } from "site/db/schema.ts";
+import { CommentaryList } from "site/components/ui/CommentaryList.tsx";
+import type { UserCommentary } from "site/sdk/types.ts";
+import { CommentaryForm } from "site/components/ui/CommentaryForm.tsx";
 
 interface Props {
   /**
    * @description The description of name.
    */
   page?: BlogPostPage | null;
-
   commentaries?: UserCommentary[];
 }
-
-// const commentaries: UserCommentary[] = [
-//   {
-//     userName: "Breno Oliveira",
-//     createdAt: "08/11/2023 at 08:39",
-//     commentary:
-//       "Que história incrível. 🥹 Parabéns Veridiana e Snow. Conte mais histórias, Zee.",
-//     profileImage: "",
-//   },
-//   {
-//     userName: "Breno Oliveira",
-//     createdAt: "08/11/2023 at 08:39",
-//     commentary:
-//       "Que história incrível. 🥹 Parabéns Veridiana e Snow. Conte mais histórias, Zee.",
-//     profileImage: "",
-//   },
-// ];
 
 const PARAGRAPH_STYLES = "[&_p]:leading-[150%] [&_*]:mb-4";
 const HEADING_STYLES =
@@ -148,15 +131,13 @@ export const loader = async (
 
   const recs = await drizzle
     .select()
-    .from(blogsComments);
-  // .where(eq(blogsComments.id, Number(props.page?.post.name)));
+    .from(comments)
+    .where(eq(comments.post_id, props.page!.post.name));
 
   return { ...props, commentaries: recs };
 };
 
 export default function BlogPost({ page, commentaries }: Props) {
-  console.log("test", commentaries);
-
   const { title, authors, image, date, content, name } = page?.post ||
     DEFAULT_PROPS;
 
@@ -240,7 +221,7 @@ export default function BlogPost({ page, commentaries }: Props) {
         </div>
       </div>
       <CommentaryList commentaries={commentaries} />
-      <CommentaryForm id={name} />
+      <CommentaryForm postId={name} />
     </div>
   );
 }
