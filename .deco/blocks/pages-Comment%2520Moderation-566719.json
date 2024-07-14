@@ -1,7 +1,11 @@
 {
   "name": "Comment Moderation",
   "path": "/Q_trk4o8hbfJdrR4v7VYwOVSEVCppS2P40f0JTPalFsKpRdG",
-  "sections": [],
+  "sections": [
+    {
+      "__resolveType": "site/sections/CommentModeration.tsx"
+    }
+  ],
   "seo": {
     "__resolveType": "website/sections/Seo/SeoV2.tsx"
   },
