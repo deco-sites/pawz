@@ -18,7 +18,6 @@
   },
   "tasks": {
     "start": "deno task bundle && deno run -A --env --config=deno.json $(deno eval 'console.log(import.meta.resolve(\"deco/hypervisor/main.ts\"))') --build-cmd 'deno task build' -- deno task dev",
-    "start:eduardobbrito": "DECO_ENV_NAME=eduardobbrito deno task start",
     "gen": "deno run -A dev.ts --gen-only",
     "play": "USE_LOCAL_STORAGE_ONLY=true deno task start",
     "component": "deno eval 'import \"deco/scripts/component.ts\"'",
@@ -37,7 +36,8 @@
     "db:pull:prod": "DENO_FUTURE=1 deno eval --env 'import \"apps/records/scripts/pullProd.ts\"'",
     "db:generate": "DENO_FUTURE=1 deno run -A --node-modules-dir npm:drizzle-kit@0.21.2 generate < /dev/null",
     "db:migrate": "DENO_FUTURE=1 deno run -A --node-modules-dir --config=deno.json npm:drizzle-kit@0.21.2 migrate",
-    "db:schema:update": "DENO_FUTURE=1 deno task db:check:credentials && deno task db:generate && deno task db:migrate"
+    "db:schema:update": "DENO_FUTURE=1 deno task db:check:credentials && deno task db:generate && deno task db:migrate",
+    "db:drop": "DENO_FUTURE=1 deno run -A --node-modules-dir npm:drizzle-kit@0.21.2 drop"
   },
   "githooks": {
     "pre-commit": "check"

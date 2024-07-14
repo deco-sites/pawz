@@ -1683,7 +1683,7 @@
             "content": [
               {
                 "type": "stack",
-                "width": 41.66666666666667,
+                "width": 47.8813559322034,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -1705,21 +1705,20 @@
               },
               {
                 "type": "stack",
-                "width": 58.333333333333336,
+                "width": 52.11864406779661,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
                 "activeItemIndex": 0,
                 "content": [
                   {
-                    "id": "%2F.deco%2Fblocks%2Fpages-Blog%252520Post%252520Page-827555.json::Preview::visibility::Preview::%7B%7D",
-                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fpages-Blog%252520Post%252520Page-827555.json::Preview::visibility::Preview::%7B%7D\" />",
+                    "id": "%2F.deco%2Fblocks%2Fpages-Blog%252520Post%252520Page-827555.json::JSON%20Properties::data-object::JSON%20Properties::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fpages-Blog%252520Post%252520Page-827555.json::JSON%20Properties::data-object::JSON%20Properties::%7B%7D\" />",
                     "type": "component",
                     "componentName": "component",
                     "componentState": {
-                      "id": "%2F.deco%2Fblocks%2Fpages-Blog%252520Post%252520Page-827555.json::Preview::visibility::Preview::%7B%7D"
+                      "id": "%2F.deco%2Fblocks%2Fpages-Blog%252520Post%252520Page-827555.json::JSON%20Properties::data-object::JSON%20Properties::%7B%7D"
                     },
-                    "width": 70,
                     "isClosable": true,
                     "reorderEnabled": true
                   }
@@ -1747,14 +1746,13 @@
             "__signal": null
           }
         },
-        "%2F.deco%2Fblocks%2Fpages-Blog%252520Post%252520Page-827555.json::Preview::visibility::Preview::%7B%7D": {
-          "name": "Preview",
-          "icon": "visibility",
+        "%2F.deco%2Fblocks%2Fpages-Blog%252520Post%252520Page-827555.json::JSON%20Properties::data-object::JSON%20Properties::%7B%7D": {
+          "name": "JSON Properties",
+          "icon": "data-object",
           "accepts": "function",
           "render": "function",
-          "viewId": "Preview",
-          "width": 70,
-          "id": "%2F.deco%2Fblocks%2Fpages-Blog%252520Post%252520Page-827555.json::Preview::visibility::Preview::%7B%7D",
+          "viewId": "JSON Properties",
+          "id": "%2F.deco%2Fblocks%2Fpages-Blog%252520Post%252520Page-827555.json::JSON%20Properties::data-object::JSON%20Properties::%7B%7D",
           "state": {
             "__signal": null
           }

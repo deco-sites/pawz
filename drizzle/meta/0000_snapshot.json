@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "d818fa56-b8e8-461d-b011-77b93660a27f",
+  "id": "f31ac3a6-b149-4282-aec1-8966d4c41dac",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "comments": {
@@ -54,11 +54,11 @@
         },
         "date": {
           "name": "date",
-          "type": "text",
+          "type": "integer",
           "primaryKey": false,
-          "notNull": false,
+          "notNull": true,
           "autoincrement": false,
-          "default": "(CURRENT_TIMESTAMP)"
+          "default": "(unixepoch())"
         },
         "body": {
           "name": "body",

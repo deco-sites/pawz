@@ -16,7 +16,7 @@ export const comments = sqliteTable("comments", {
   parent_comment_id: integer("parent_comment_id").notNull().default(0),
   author: text("author").notNull().default("Anonimo"),
   author_email: text("author_email"),
-  date: integer("timestamp1", { mode: "timestamp" })
+  date: integer("date", { mode: "timestamp" })
     .notNull()
     .default(sql`(unixepoch())`),
   body: text("body").notNull(),

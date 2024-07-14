@@ -5,7 +5,7 @@ CREATE TABLE `comments` (
 	`parent_comment_id` integer DEFAULT 0 NOT NULL,
 	`author` text DEFAULT 'Anonimo' NOT NULL,
 	`author_email` text,
-	`date` text DEFAULT (CURRENT_TIMESTAMP),
+	`date` integer DEFAULT (unixepoch()) NOT NULL,
 	`body` text NOT NULL
 );
 --> statement-breakpoint
