@@ -1,4 +1,4 @@
-import { AppContext } from "../apps/site.ts";
+import { AppContext } from "site/apps/site.ts";
 import type { AppContext as RecordsApp } from "site/apps/deco/records.ts";
 import type { AppContext as ResendApp } from "apps/resend/mod.ts";
 import { useComponent } from "site/sections/Component.tsx";

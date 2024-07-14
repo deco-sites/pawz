@@ -1,1 +1,0 @@
-ALTER TABLE `comments` ADD `approved` integer DEFAULT 0;
